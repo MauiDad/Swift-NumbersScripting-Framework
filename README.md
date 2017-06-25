@@ -44,11 +44,13 @@ Hey, I’m not the world’s best programmer by any measure.  I am writing this 
 	* Formula: ```(tbl.cellRange?.cells!().object(atLocation: 2) as! NumbersCell).setValue!(“=14*2”)```
 * Adding Objects:
 	* Sheet:
-	  ```sht  = objectWithApplication(nmbrs, scriptingClass: NumbersScripting.sheet)
-            document.sheets!().add(sht)```
-	* Table:
+	```sht  = objectWithApplication(nmbrs, scriptingClass: NumbersScripting.sheet)
+            document.sheets!().add(sht)
+	    ```
+	    * Table:
         ```tbl = objectWithApplication(nmbrs, scriptingClass: NumbersScripting.table)
-        sht.tables!().add(tbl)```
+        sht.tables!().add(tbl)
+	```
 * copy and paste commands (keystroke simulation):
  
  ```func copy() {
