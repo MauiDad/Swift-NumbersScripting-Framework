@@ -1,7 +1,7 @@
 # Swift-NumbersScripting-Framework
 Framework to use Swift with the Scripting Bridge with iWork Numbers
 
-This is a Numbers scripting framework developed via the instructions  on Github from Tony Ingraldi  (tingraldi), many thanks:
+This is a Numbers scripting framework developed via the instructions  on Github from Tony Ingraldi  (@tingraldi), many thanks:
 
 [GitHub - tingraldi/SwiftScripting: Utilities and samples to aid in using Swift with the Scripting Bridge](https://github.com/tingraldi/SwiftScripting)
 
