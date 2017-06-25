@@ -21,26 +21,31 @@ Hey, I’m not the world’s best programmer by any measure.  I am writing this 
 	 
 # Usage Hints:
 * Set Application Object:
-```let nmbrs: NumbersApplication = SBApplication(bundleIdentifier: “com.apple.iWork.numbers”)! as NumbersApplication
+```
+let nmbrs: NumbersApplication = SBApplication(bundleIdentifier: “com.apple.iWork.numbers”)! as NumbersApplication
 ```
 * Set Document Object:
-```let document: NumbersDocument = nmbrs.documents!().object(atLocation: 0) as! NumbersDocument
+```
+let document: NumbersDocument = nmbrs.documents!().object(atLocation: 0) as! NumbersDocument
 ```
 * Get Cell values:
-```let formattedValue: String = (cell as! NumbersCell).formattedValue ?? ""
+```
+let formattedValue: String = (cell as! NumbersCell).formattedValue ?? ""
 ```
 * Read entire table to array:
-```let valarray = (tbl.cells!() as NSArray).map {($0 as! NumbersCell).formattedValue!}
+```
+let valarray = (tbl.cells!() as NSArray).map {($0 as! NumbersCell).formattedValue!}
 ```
 * Read datarange (skip row headers and footers) into array of arrays:
-```var rowdata: [[String]] = []
-  let firstdatarow: Int = tbl.headerRowCount! + 1
-  let lastdatarow: Int = tbl.rows!().count - tbl.footerRowCount!
-     for  r in firstdatarow...lastdatarow {
-        let row: NumbersRow = tbl.rows!().object(atLocation: r) as! NumbersRow        
+```
+var rowdata: [[String]] = []
+let firstdatarow: Int = tbl.headerRowCount! + 1
+let lastdatarow: Int = tbl.rows!().count - tbl.footerRowCount!
+for  r in firstdatarow...lastdatarow {
+	let row: NumbersRow = tbl.rows!().object(atLocation: r) as! NumbersRow        
         let coldata = (row.cells!() as NSArray).map {($0 as! NumbersCell).formattedValue!}
         rowdata.append(coldata)
-    }    	
+}    	
 ```
 * Set Cell Values. Note: Setting values one at a time can be slower than you might like as the spreadsheet refreshes during the setting process.  If you are doing bulk data setting, use the copy and paste commands, instead.  Note that the table format is tab-delimited.  Copy and Paste ignore hidden and filtered rows/columns, so you can copy only the visible rows of a filtered table. likewise, pasteing occurs from the beginning of the selected cell range in the table and ignores hidden rows/columns.
 	* String: ```(tbl.cellRange?.cells!().object(atLocation: 2) as! NumbersCell).setValue!(“test”)```
