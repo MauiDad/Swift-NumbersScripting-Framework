@@ -74,7 +74,8 @@ sht.tables!().add(tbl)
     event2?.post(tap: CGEventTapLocation.cghidEventTap);
   }
 ```
-```func paste () {
+```
+func paste () {
     
     let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // cmd-v down
     event1?.flags = CGEventFlags.maskCommand;
