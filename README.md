@@ -50,7 +50,8 @@ let valarray = (tbl.cells!() as NSArray).map {($0 as! NumbersCell).formattedValu
         tbl = objectWithApplication(nmbrs, scriptingClass: NumbersScripting.table)
         sht.tables!().add(tbl)
 * copy and paste commands (keystroke simulation):
-  func copy() {
+ 
+ func copy() {
      
     let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x08, keyDown: true); // cmd-c down
     event1?.flags = CGEventFlags.maskCommand;
